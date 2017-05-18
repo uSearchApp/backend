@@ -5,7 +5,9 @@
 	
 	$lat = $_GET["lat"];
 	$lng = $_GET["lng"];
-	$check = mysqli_query($conexao, "SELECT * FROM supermercado WHERE latitude = '$lat' AND longitude = '$lng'"); //EXEMPLO
+	$check = mysqli_query($conexao, "SELECT * 
+					 FROM supermercado S 
+					 WHERE Geo('$lat', '$lng', S.latitude, S.longitude) < 0.5");
 	$row = mysqli_num_rows($check);
 	if($row > 0){
 		while($row=mysqli_fetch_array($check)){
