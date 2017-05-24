@@ -1,7 +1,7 @@
 <?php
   header("Content-Type: text/html; charset=UTF-8",true);
 
-  $conexao = mysqli_connect("localhost", "root", "2ehpmxnd","usearch");
+  $conexao = mysqli_connect("localhost", "root", "","usearch");
 
   $nome = $_GET['nome'];
   $numero = $_GET['numero'];
