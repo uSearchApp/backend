@@ -13,7 +13,7 @@
   $lat = $_GET['lat'];
   $lng = $_GET['lng'];
 
-  $check = "INSERT INTO supermercado (nome, numero, rua, bairro, cidade, estado, pais, latitude, longitude) VALUES ('$nome', '$numero', '$rua', '$bairro', '$cidade', '$estado', '$pais', '$lat', '$lng' )";
+  $check = mysqli_query($conexao,"INSERT INTO supermercado (nome, numero, rua, bairro, cidade, estado, pais, latitude, longitude) VALUES ('$nome', '$numero', '$rua', '$bairro', '$cidade', '$estado', '$pais', '$lat', '$lng' )");
 
   if (mysqli_query($conexao, $check)) {
     $result = array('success' => true);
@@ -22,5 +22,5 @@
     $result = array('success' => false);
     echo json_encode($result);
   }
-mysqli_close($conexao);
+  mysqli_close($conexao);
 ?>
