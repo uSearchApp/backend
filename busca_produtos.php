@@ -22,8 +22,8 @@
 		while($row=mysqli_fetch_array($check)){
 			$produtos['produto'][$i]['valor'] = $row['min(hp.valor)'];
 			$produtos['produto'][$i]['nome'] = $row['nome'];
-            $produtos['produto'][$i]['supermercado'] = $row['nome'];
-            $i++;
+            		$produtos['produto'][$i]['supermercado'] = $row['nome'];
+            		$i++;
 		}
 		echo json_encode($users,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     }else{
